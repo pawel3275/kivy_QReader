@@ -1,0 +1,29 @@
+#:import XCamera utils.xcamera.XCamera
+
+<MyPopup>:
+    title: root.type
+    size_hint: (0.4, 0.8)
+    auto_dismiss: False
+    BoxLayout:
+        orientation: "vertical"
+        padding: 10
+        Label:
+            text: root.result
+            text_size: self.width, None
+            size_hint: 1, None
+            height: self.texture_size[1]
+            halign: 'center'
+            valign: 'top'
+        Button:
+            text: "Close"
+            size_hint: 1, 0.1
+            pos_hint: {"bottom":1}
+            on_release: root.dismiss()
+
+<QReader>
+    FloatLayout:
+        size: self.parent.size
+
+        XCamera:
+            id: xcamera
+

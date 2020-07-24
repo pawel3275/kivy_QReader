@@ -1,0 +1,13 @@
+<XCamera>:
+    id: camera
+    resolution: (640, 480) # 1920, 1080
+    allow_stretch: True
+    color_not_found: (1, 0, 0, 1)
+    color_found: (0, 1, 0, 1)
+
+    canvas:
+        Color:
+            rgba: self.color_not_found if self.current_state == "not_found" else self.color_found
+        Line:
+            width: 2
+            rectangle: (self.center_x-125, self.center_y-125, 250, 250)
