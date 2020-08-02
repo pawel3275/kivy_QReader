@@ -117,7 +117,9 @@ class Image:
         qr.add_data(message)
         qr.make(fit=True)
         img = qr.make_image(fill_color="black", back_color="white")
-        img.save(path)
+        print(img.size)
+        img.save("Pilimage.png")
+        return img
 
     def __del__(self):
         cv2.destroyAllWindows()

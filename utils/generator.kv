@@ -1,0 +1,48 @@
+<QGenerator>:
+    BoxLayout:
+        padding: 10, 100
+        orientation: "vertical"
+
+        BoxLayout:
+            size_hint: 0.90, 0.5
+            pos_hint: {'center_x': 0.5}
+            canvas:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    id: qrTexture
+                    texture: root.qr_image
+
+        BoxLayout:
+            size_hint: 0.90, 0.3
+            pos_hint: {'center_x': 0.5}
+            TextInput:
+                id: stringInput
+                size_hint: 0.90, 0.3
+                pos_hint: {'center_x': 0.5, "center_y": 0.2}
+                color: 0, 1, 0, 0
+                hint_text:"Enter text"
+                focus: True
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint: 0.90, 0.2
+            pos_hint: {'center_x': 0.5}
+            Button:
+                id: generate_button
+                size_hint: 0.3, 0.2
+                pos_hint: {'center_y': 0.9}
+                text: "Random"
+                on_press: root.generate_random()
+            Button:
+                id: generate_random_button
+                size_hint: 0.3, 0.2
+                pos_hint: {'center_y': 0.9}
+                text: "Generate"
+                on_press: root.generate()
+            Button:
+                id: save_button
+                text: "Save"
+                size_hint: 0.3, 0.2
+                pos_hint: {'center_y': 0.9}
+                on_press: root.save()

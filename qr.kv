@@ -1,0 +1,26 @@
+#:import QReader utils.reader.QReader
+#:import QGenerator utils.generator.QGenerator
+
+<ReaderScreen>:
+    QReader:
+        id: reader
+
+<GeneratorScreen>:
+    QGenerator:
+        id: generator
+
+
+<WindowManager>:
+    id: windowManager
+
+    ReaderScreen:
+        id: readerWindow
+        name: "readerScreen"
+        manager: windowManager
+
+    GeneratorScreen:
+        id: generatorScreen
+        name: "generatorScreen"
+        manager: windowManager
+
+
