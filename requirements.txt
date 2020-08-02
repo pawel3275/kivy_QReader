@@ -1,0 +1,10 @@
+kivy
+plyer
+os
+io
+cv2
+uuid
+numpy
+pyzbar
+jnius
+qrcode
