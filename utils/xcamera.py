@@ -6,6 +6,7 @@ from kivy.properties import ObjectProperty
 from kivy.resources import resource_add_path
 from kivy.uix.camera import Camera
 from kivy.utils import platform
+from kivy.core.window import Window
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 resource_add_path(ROOT)
@@ -49,11 +50,17 @@ class XCamera(Camera):
     __events__ = ('on_picture_taken', 'on_camera_ready')
 
     current_state = ObjectProperty(None)
+    swidth = ObjectProperty(None)
+    sheight = ObjectProperty(None)
+    window_sizes = ObjectProperty(None)
 
     def __init__(self, **kwargs):
         Builder.load_file(os.path.join(ROOT, "xcamera.kv"))
         super().__init__(**kwargs)
         self.current_state = "not_found"
+        self.swidth = Window.size[1]
+        self.sheight = Window.size[0]
+        self.window_sizes = (self.swidth, self.sheight)
 
     def _on_index(self, *largs):
         """

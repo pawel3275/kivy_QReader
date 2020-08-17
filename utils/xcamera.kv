@@ -4,6 +4,9 @@
     allow_stretch: True
     color_not_found: (1, 0, 0, 1)
     color_found: (0, 1, 0, 1)
+    play: True
+    size_hint: 0, 0
+    pos: self.parent.pos
 
     canvas:
         Color:
@@ -11,3 +14,18 @@
         Line:
             width: 2
             rectangle: (self.center_x-125, self.center_y-125, 250, 250)
+
+    canvas.before:
+        PushMatrix:
+        Rotate:
+            axis: 0, 0, 1
+            angle: -90
+            origin: self.parent.center
+    canvas.after:
+        Color:
+            rgba: 1,1,1,1
+        Rectangle:
+            pos: (-self.sheight / 2 + 80, self.swidth / 4 -40)
+            size: self.window_sizes
+            texture: camera.texture
+        PopMatrix
