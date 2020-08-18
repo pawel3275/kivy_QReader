@@ -67,7 +67,6 @@ class QReader(XCamera):
         """
         if self.get_camera_texture() is None:
             return
-
         upper_left, lower_right = self.get_rectangle_angles()
 
         image_to_obtain = Image(texture=self.get_camera_texture(),

@@ -45,6 +45,7 @@ class Image:
         Non obligatory method for subtracting image in the middle of the image
         :return None:
         """
+        print("Entered")
         upper_left_corner = (int(self.image.shape[1] / 2 - 125), int(self.image.shape[0] / 2 - 125))
         lower_right_corner = (int(self.image.shape[1] / 2 + 125), int(self.image.shape[0] / 2 + 125))
 

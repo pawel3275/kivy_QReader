@@ -8,13 +8,6 @@
     size_hint: 0, 0
     pos: self.parent.pos
 
-    canvas:
-        Color:
-            rgba: self.color_not_found if self.current_state == "not_found" else self.color_found
-        Line:
-            width: 2
-            rectangle: (self.center_x-125, self.center_y-125, 250, 250)
-
     canvas.before:
         PushMatrix:
         Rotate:
@@ -28,4 +21,7 @@
             pos: (-self.sheight / 2 + 80, self.swidth / 4 -40)
             size: self.window_sizes
             texture: camera.texture
+        Line:
+            width: 20
+            rectangle: (self.center_x-125, self.center_y-125, 550, 500)
         PopMatrix
